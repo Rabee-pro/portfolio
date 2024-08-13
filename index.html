@@ -5,16 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <link rel="stylesheet" href="./style.css"> -->
     <title>MY PORTFOLIO</title>
     <style>
         .nav{
+            width: 100%;
+            /* height: 80px; */
             box-shadow: 5px 10px 18px #ebebeb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid gray;
+            padding: 20px;
+            position: fixed;
+            z-index: 99;
+            background-color: white;
         }
         .nav1{
             -webkit-box-shadow: 0px -19px 19px 0px rgba(0,0,0,0.75);
             -moz-box-shadow: 0px -19px 19px 0px rgba(0,0,0,0.75);
             box-shadow: 0px -19px 19px 0px #ebebeb;
+        }
+        
+        .myList {
+            display: flex;
+            justify-content: space-between;
+            /* flex-direction: column;
+            margin-top: 50px; */
+        }
+        .fa-bars{
+            /* position: relative;
+            top: 0;
+            left: 0; */
+            display: none;
+            font-size: 40px;
+            padding: 30px;
+            color: #1d4ed8;
+        }
+        .imShad{
+            -webkit-box-shadow: 20px 14px 66px -1px rgba(85,85,224,1);
+-moz-box-shadow: 20px 14px 66px -1px rgba(85,85,224,1);
+box-shadow: 20px 14px 66px -1px rgba(85,85,224,1);
         }
         #skills{
             margin: auto;
@@ -24,26 +56,73 @@
             display: flex;
         }
 
+        @media(max-width:900px){
+            .fa-bars{
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+           
+            
+        }
+        .myList {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            display: none;
+            
+        }
+        
+        .showmenu{
+            display: block;
+
+        }
+        .myList  li{
+            padding: 10px;
+        }
+        .nav{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .head{
+            align-self: self-start;
+            margin: 15px 0 0 20px;
+        }
+
+        /* about */
+        #about{
+           padding-top: 50px;
+        }
+        
+
+        }
+
         
     </style>
 </head>
 <body>
     <div class="wholeContainer">
         <!-- nav bar -->
-        <div class="nav flex flex-row justify-between w-full  h-20 items-center border-b border-gray-300">
-            <h2 class="text-3xl px-3 text-blue-700 font-bold"> <span class="text-yellow-500 font-bold">R</span>abeena</h2>
-            <div class="myList ">
-                  <ul class="flex flex-row justify-between">
+        <!-- flex flex-row justify-between w-full  h-20 items-center border-b border-gray-300 -->
+        <!-- <div style="width: 100%; height: auto;"> -->
+        <div class="nav ">
+            <h2 class="head text-3xl px-3 text-blue-700 font-bold"> <span class="text-yellow-500 font-bold">R</span>abeena</h2>
+            
+            
+                <!-- flex flex-row justify-between  -->
+                  <ul class="myList showmenu">
                     <li class="text-lg px-3 text-blue-700 hover:text-yellow-500"><a href="#about">About me</a></li>
                     <li class="text-lg px-3 text-blue-700 hover:text-yellow-500"><a href="#skills">Skills</a></li>
                     <li class="text-lg px-3 text-blue-700 hover:text-yellow-500"><a href="#internship">Intern ship</a></li>
                     <li class="text-lg px-3 text-blue-700 hover:text-yellow-500"><a href="#education">Education</a></li>
                     <li class="text-lg px-3 text-blue-700 hover:text-yellow-500"><a href="#contact">contact</a></li>
                   </ul>
-            </div> 
+            
+            <i class="fa-solid fa-bars"></i>
         </div>
         <!-- about me -->
-        <div class="flex flex-row items-center justify-center w-full lg:h-screen h-full text-center mt-auto text-center p-5   " id="about" >
+        <div class="flex flex-row items-center justify-center w-full lg:h-screen h-full text-center mt-auto text-center p-5   lg:pt-8" id="about" >
             <div class="text-center mt-20">
             <div class="text-center">
                    <h2 class="text-lg text-yellow-500 " >hai, I am <span class="text-3xl px-3 text-blue-700 font-bold">R.Rabeena</span></h2>
@@ -73,14 +152,15 @@
             
             </div>
         </div>
+       <!-- </div> -->
         <!-- skills start-->
         <div class="w-full lg:h-screen h-full p-5" id="skills">
-            <div class="flex flex-row justify-center w-full">
+            <div class="flex flex-row justify-center w-full  mt-12 ">
                 <h2 class="text-3xl text-blue-700 mt-7 font-bold border-b-4 border-solid border-b-yellow-500 h-14 w-24 ">SKILLS</h2>
             </div>
 
-            <div class="lg:flex lg:flex-row  lg:items-center h-full w-4/5 m-5 lg:m-auto" id="skillsImg">
-                <img src="./img/skillsimg.jpg" alt="" class="w-full lg:w-6/12 lg:h-3/4 border border-solid rounded-3xl">
+            <div class="lg:flex lg:flex-row  lg:items-center h-full lg:h-5/6 w-4/5 m-5 lg:m-auto" id="skillsImg">
+                <img src="./img/skillsimg.jpg" alt="" class=" imShad w-full lg:w-6/12 lg:h-3/4 border border-solid rounded-3xl">
                 <div>
                     <div class="skillspoint p-5 lg:p-8 lg:ml-28">
                         <i class="fa-solid fa-feather-pointed text-5xl text-yellow-500 "></i>
@@ -116,13 +196,13 @@
         </div>
         <!-- skills end-->
         <!-- internship start -->
-        <div class="w-full lg:h-screen h-full p-5" id="internship">
-            <div class="flex flex-row justify-center w-full">
+        <div class="w-full lg:h-screen h-full p-5 "  id="internship">
+            <div class="flex flex-row justify-center w-full mt-12">
                 <h2 class="text-3xl text-blue-700 mt-7 font-bold border-b-4 border-solid border-b-yellow-500 h-14 w-30 ">INTERN SHIP</h2>
             </div >
 
-            <div class="lg:flex lg:flex-row  lg:items-center h-full w-11/12 m-5 lg:m-auto">
-                <img src="./img/internImg.jpg" alt="" class="w-full lg:w-6/12 lg:h-3/4 border border-solid rounded-3xl">
+            <div class="lg:flex lg:flex-row  lg:items-center h-full lg:h-5/6 w-4/5 m-8 lg:m-auto">
+                <img src="./img/internImg.jpg" alt="" class=" imShad w-full lg:w-6/12 lg:h-3/4 border border-solid rounded-3xl">
 
                 <div>
                     <div class="skillspoint p-1  lg:ml-20">
@@ -138,7 +218,7 @@
 
                         <div class="skillspoint p-3  ">
                             <i class="fa-solid fa-link text-3xl text-yellow-500 "></i>
-                            <a href="https://payilagam.com/courses/sql-training-in-chennai/" class="pl-4 text-lg text-blue-700 hover:text-yellow-500">SQL page</a>
+                            <a href="https://payilagam.com/courses/sql-training-in-chennai/" class=" pl-4 text-lg text-blue-700 hover:text-yellow-500">SQL page</a>
                         </div>
 
                         <div class="skillspoint p-3  ">
@@ -169,12 +249,12 @@
         <!-- internship end -->
         <!-- Education start -->
         <div class="w-full lg:h-screen h-full p-5" id="education">
-            <div class="flex flex-row justify-center w-full">
+            <div class="flex flex-row justify-center w-full mt-12">
                 <h2 class="text-3xl text-blue-700 mt-7 font-bold border-b-4 border-solid border-b-yellow-500 h-14 w-30 ">EDUCATION</h2>
             </div >
 
-            <div class="lg:flex lg:flex-row  lg:items-center h-full w-11/12 m-3 lg:m-auto">
-                <img src="./img/education.jpg" alt="" class="w-full lg:w-6/12 lg:h-3/4 border border-solid rounded-3xl">
+            <div class="lg:flex lg:flex-row  lg:items-center h-full lg:h-5/6  w-11/12 m-3 lg:m-auto">
+                <img src="./img/education.jpg" alt="" class=" imShad w-full lg:w-6/12 lg:h-3/4 border border-solid rounded-3xl">
 
                 <div>
                     <div class=" p-1  lg:ml-20">
